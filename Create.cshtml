@@ -1,0 +1,29 @@
+﻿@model ChocolateShop.entity.Chocolate
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+@using (Html.BeginForm("Create","Index",FormMethod.Post))
+{
+<table>
+    <tr>
+        <td>Name :</td>
+        <td>@Html.TextBoxFor(Model => Model.Name)</td>
+    </tr>
+    <tr>
+        <td>Price :</td>
+        <td>@Html.TextBoxFor(Model => Model.Price)</td>
+    </tr>
+    <tr>
+        <td>Protein :</td>
+        <td>@Html.TextBoxFor(Model => Model.Protein)</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="~/Index.cshtml">Back</a>
+        </td>
+    </tr>
+</table>
+}

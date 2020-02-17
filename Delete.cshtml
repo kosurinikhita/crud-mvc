@@ -1,0 +1,23 @@
+﻿@model ChocolateShop.entity.Chocolate
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+@using (Html.BeginForm("Create", "Index", FormMethod.Post))
+{
+    <table border="1">
+        <tr>
+            <td>
+                Name :
+            </td>
+            <td>
+                @Html.TextBoxFor(name => Model.Name)
+            </td>
+        </tr>
+        <tr>
+        </tr>
+    </table>
+
+}

@@ -1,0 +1,32 @@
+﻿@model ChocolateShop.entity.Chocolate
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@Html.ActionLink("Create new mobile", "Create")
+<br />
+@if (TempData["Message"] != null)
+{
+    @Html.Label((string)TempData["Message"])
+}
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Protein</th>
+    </tr>
+    @foreach (ChocolateShop.entity.Chocolate chocolate in @Model)
+    {
+        <tr>
+            <td>@chocolate.Name</td>
+            <td>@chocolate.Price</td>
+            <td>@chocolate.Protein</td>
+            <td>
+                @Html.ActionLink("Edit /", "Edit", new { name = chocolate.Name })
+            @Html.ActionLink("Delete", "Delete", new { name = chocolate.Name })
+        </td>
+    </tr>
+}
+</table>
